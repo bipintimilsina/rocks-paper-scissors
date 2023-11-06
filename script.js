@@ -70,7 +70,7 @@ let game = () => {
       console.log(playRound(playerSelection, computerSelection));
     // }, delayInMilliseconds);
     console.log(
-      `Win Count: Player-${plteayerWinCount} Computer-${computerWinCount} `
+      `Win Count: Player-${playerWinCount} Computer-${computerWinCount} `
     );
 
     console.log("\n");
