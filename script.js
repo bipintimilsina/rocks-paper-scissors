@@ -1,52 +1,26 @@
 // ui code
 
+function handleClick(e) {
+  const clickedOne = e.target.id;
 
-const rock= document.getElementById("rock")
-const paper= document.getElementById("paper")
-const scissors= document.getElementById("scissors")
+  askPlayerSelection(clickedOne);
+}
 
+const buttonContain = document.getElementById("button-container");
+const rock = document.getElementById("rock");
+const paper = document.getElementById("paper");
+const scissors = document.getElementById("scissors");
+rock.addEventListener("click", handleClick, false);
+paper.addEventListener("click", handleClick, false);
+scissors.addEventListener("click", handleClick, false);
 
-rock.addEventListener("click",playRound,false)
-paper.addEventListener("click",playRound,false)
-scissors.addEventListener("click",playRound,false)
+const finalScore = document.querySelector("#final");
 
+const score = document.getElementById("scoreCard");
+// score.lastChild.textContent="hey"
+console.log(score.lastChild);
 
-
-const score=document.getElementById("scoreCard")
-score.lastChild.textContent="hey"
-console.log(score.lastChild)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+const displayResult = document.getElementById("display-result");
 
 let playerWinCount = 0,
   computerWinCount = 0;
@@ -103,35 +77,34 @@ let game = () => {
   console.log("lets play Five Rounds".toUpperCase());
   for (i = 1; i <= 5; i++) {
     console.log(`Round ${i}`);
+
     let playerSelection = askPlayerSelection();
 
     let computerSelection = getComputerChoice();
 
-    score.lastChild=playRound(playerSelection,computerSelection)
+    score.lastChild.textContent = playRound(playerSelection, computerSelection);
 
-    console.log(playRound(playerSelection, computerSelection));
-    console.log(
-      `Win Count: Player-${playerWinCount} Computer-${computerWinCount} `
-    );
-
-    console.log("\n");
+    // console.log(playRound(playerSelection, computerSelection));
+    displayResult.lastChild.textContent = `Win Count: Player-${playerWinCount} Computer-${computerWinCount}`;
   }
-  //its for checking who won
+  //for ui checking who won
   playerWinCount > computerWinCount
-    ? console.log(`congrats! You win`.toUpperCase())
+    ? (finalScore.firstChild.textContent = "Congrats! You win".toUpperCase())
     : playerWinCount < computerWinCount
-    ? console.log(`You lose Dummy`.toUpperCase())
-    : console.log("Well its a Tie , Go Home ");
+    ? (finalScore.firstChild.textContent = "You lose Dummy".toUpperCase())
+    : (finalScore.firstChild.textContent = "Well its a Tie, Go Home");
 };
 game();
 
-function askPlayerSelection() {
-  let ourSelection = prompt('Enter your choice "Rock :Paper :scissors', "rock");
-  ourSelection = ourSelection.toLowerCase();
-  console.log(`Player Selected ${ourSelection}`);
-  
-  return ourSelection;
+function askPlayerSelection(playerSelection) {
+  // let ourSelection = prompt('Enter your choice "Rock :Paper :scissors', "rock");
+
+  let isSelected = playerSelection;
+
+  // ourSelection = ourSelection.toLowerCase();
+  buttonContain.nextSibling.innerText = `Player Selected ${isSelected}`;
+
+  console.log(`Player Selected ${isSelected}`);
+
+  return isSelected;
 }
-
-
-
