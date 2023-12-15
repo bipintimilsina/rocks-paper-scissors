@@ -1,3 +1,53 @@
+// ui code
+
+
+const rock= document.getElementById("rock")
+const paper= document.getElementById("paper")
+const scissors= document.getElementById("scissors")
+
+
+rock.addEventListener("click",playRound,false)
+paper.addEventListener("click",playRound,false)
+scissors.addEventListener("click",playRound,false)
+
+
+
+const score=document.getElementById("scoreCard")
+score.lastChild.textContent="hey"
+console.log(score.lastChild)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 let playerWinCount = 0,
   computerWinCount = 0;
 
@@ -18,7 +68,7 @@ let getComputerChoice = () => {
   console.log(`Computer Choose ${compuChoice}`);
   return compuChoice;
 };
-function getRandomChoice() {}
+// function getRandomChoice() {}
 
 //function for 1 round game
 function playRound(playerSelection, computerSelection) {
@@ -57,6 +107,8 @@ let game = () => {
 
     let computerSelection = getComputerChoice();
 
+    score.lastChild=playRound(playerSelection,computerSelection)
+
     console.log(playRound(playerSelection, computerSelection));
     console.log(
       `Win Count: Player-${playerWinCount} Computer-${computerWinCount} `
@@ -77,5 +129,9 @@ function askPlayerSelection() {
   let ourSelection = prompt('Enter your choice "Rock :Paper :scissors', "rock");
   ourSelection = ourSelection.toLowerCase();
   console.log(`Player Selected ${ourSelection}`);
+  
   return ourSelection;
 }
+
+
+
