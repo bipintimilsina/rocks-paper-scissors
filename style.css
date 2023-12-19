@@ -1,0 +1,78 @@
+body{
+  box-sizing: border-box;
+  font-family: 'Macondo Swash Caps', cursive!important;
+  font-size: ;
+}
+
+
+.custom-text-size{
+
+
+
+
+  font-size:60px;
+}
+
+
+.headings{
+
+
+  font-family: 'Macondo Swash Caps', cursive;
+}
+.purple-color{
+  color: #8070ac;
+}
+
+
+.green-color{
+  color: #62b49c;
+}
+.red-color{
+  color: #b96b78;
+}
+
+
+.play img{
+  width: 25px;
+  height: 25px;
+
+}
+
+.play p{
+  font-weight: 900;
+}
+
+.play-items{
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  
+
+
+
+  
+  background-color: white;
+  border-radius: 10px;
+  width: 120px;
+  height: 120px;
+  margin: 15px;
+  border-radius: 3px;
+  box-shadow: 4px 5px 0px black;
+  border-bottom: 2px solid;
+  border-right: 1px solid;
+  transform: translate(-1%, -3%);
+}
+
+.play-items:hover{
+
+cursor:pointer;
+
+  background-color: lightgrey;
+  box-shadow: 3px 3px 1px;
+  border-bottom: 2px solid;
+  transform: translate(1%, -1%);
+transition: all 0.1s ease-in;
+}

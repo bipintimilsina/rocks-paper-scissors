@@ -1,41 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Rock Paper Scissors</h1>
-<div id="button-container">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link rel="stylesheet" href="style.css" />
 
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+  </head>
 
+  <body>
+    <h1 class="headings text-center mt-3">
+      <span class="purple-color">ROCK </span>
+      <span class="green-color">PAPER </span>
+      <span class="red-color">SCISSORS</span>
+    </h1>
+    <div class="ending-score"></div>
+    <!-- <div
+      class="container-fluid p-5 d-flex justify-content-evenly h-75 flex-wrap"
+    >
+      <button
+        type="button"
+        class="p-3 btn btn-outline-primary rock fs-3 h-50 w-50 custom-text-size"
+      >
+        Rock✊
+      </button>
+      <button
+        type="button"
+        class="p-3 btn btn-outline-primary paper fs-3 h-50 w-50"
+      >
+        Paper🤚
+      </button>
+      <button
+        type="button"
+        class="p-3 btn btn-outline-primary scissors fs-3 h50 w-50"
+      >
+        Scissors✌️
+      </button>
+    </div> -->
 
-    <button id="rock">Rock</button>
-    <button id="paper">paper</button>
-    <button id="scissors">Scissors</button>
-    
-</div>
+    <div class="container-fluid play d-flex justify-content-center p-3 flex-wrap">
+      <div class="play-items border border-info p-2 rounded rock">
+        <p>ROCK</p>
+        <img src="images/rock.png" alt="" />
+      </div>
+      <div class="play-items border border-info p-2 rounded paper">
+        <p>PAPER</p>
+        <img src="images/paper.png" alt="" />
+      </div>
+      <div class="play-items border border-info p-2 rounded scissors ">
+        <p>SCISSORS</p>
+        <img src="images/scissors.png" alt="" />
+      </div>
+    </div>
+    <div class="current-score"></div>
+    <div class="outcome"></div>
 
+    <div class="d-flex justify-content-center container-fluid">
+      <img src="images/separator.jpg" alt="" />
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
 
-
-
-<div id="display-result">
-<p>The Result is </p>
-<p></p>
-
-</div>
-<div id="scoreCard">
-    <p>Ongoing ScoreCard is </p>
-    <p></p>
-</div>
-
-
-
-<div id="final">
-    <p></p>
-</div>
-
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
