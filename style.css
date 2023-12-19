@@ -32,6 +32,13 @@ body{
 }
 
 
+.current-items{
+  min-width: 100px;
+}
+/* .current-score{
+  min-width: 100px;
+} */
+
 .play img{
   width: 25px;
   height: 25px;
@@ -76,3 +83,33 @@ cursor:pointer;
   transform: translate(1%, -1%);
 transition: all 0.1s ease-in;
 }
+
+
+
+
+.logo img{
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+
+@media only screen and (max-width:340px) {
+  .rock,.paper,.scissors{
+    width: 80px;
+    height:80px;
+
+  }
+
+  .play-items{
+    margin: 6px;
+  }
+
+  
+}
+
+
+
+/* .separator{
+  width: 100%;
+} */

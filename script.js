@@ -6,7 +6,7 @@ const EndingScore = document.querySelector(".ending-score");
 
 const currentScoreIs = document.querySelector(".current-score");
 let playerWinCount = 0,
-computerWinCount = 0;
+  computerWinCount = 0;
 
 // currentScore(playerWinCount, computerWinCount);
 // function getRandomChoice() {}
@@ -17,7 +17,7 @@ function playRound(playerSelection, computerSelection) {
     const p = document.createElement("p");
 
     p.innerText = "YOU TIED";
-    p.classList.add("alert", "alert-success","text-center","w-75","mx-auto");
+    p.classList.add("alert", "alert-success", "text-center", "w-75", "mx-auto");
     outcome.appendChild(p);
 
     // return "::::Tie:::";
@@ -27,7 +27,7 @@ function playRound(playerSelection, computerSelection) {
     const p = document.createElement("p");
 
     p.innerText = "You Win scissors✌️ Cuts Paper🤚";
-    p.classList.add("alert", "alert-success","text-center","w-75","mx-auto");
+    p.classList.add("alert", "alert-success", "text-center", "w-75", "mx-auto");
 
     outcome.appendChild(p);
 
@@ -36,7 +36,7 @@ function playRound(playerSelection, computerSelection) {
     computerWinCount++;
     const p = document.createElement("p");
     p.innerText = "You Lose Scissors✌️ cuts paper🤚";
-    p.classList.add("alert", "alert-success","text-center","w-75","mx-auto");
+    p.classList.add("alert", "alert-success", "text-center", "w-75", "mx-auto");
 
     outcome.appendChild(p);
 
@@ -45,7 +45,7 @@ function playRound(playerSelection, computerSelection) {
     playerWinCount++;
     const p = document.createElement("p");
     p.innerText = "You Win Rock✊ beats scissors✌️";
-    p.classList.add("alert", "alert-success","text-center","w-75","mx-auto");
+    p.classList.add("alert", "alert-success", "text-center", "w-75", "mx-auto");
 
     outcome.appendChild(p);
 
@@ -54,7 +54,7 @@ function playRound(playerSelection, computerSelection) {
     computerWinCount++;
     const p = document.createElement("p");
     p.innerText = "You Lose Rock✌️ beats Scissors✌️";
-    p.classList.add("alert", "alert-success","text-center","w-75","mx-auto");
+    p.classList.add("alert", "alert-success", "text-center", "w-75", "mx-auto");
 
     outcome.appendChild(p);
 
@@ -65,7 +65,7 @@ function playRound(playerSelection, computerSelection) {
     const p = document.createElement("p");
     p.innerText = "You win Paper🤚 beats Rock✌️";
 
-    p.classList.add("alert", "alert-success","text-center","w-75","mx-auto");
+    p.classList.add("alert", "alert-success", "text-center", "w-75", "mx-auto");
 
     outcome.appendChild(p);
 
@@ -75,7 +75,7 @@ function playRound(playerSelection, computerSelection) {
 
     const p = document.createElement("p");
     p.innerText = "You lose Paper🤚 beats Rock✊";
-    p.classList.add("alert", "alert-success","text-center","w-75","mx-auto");
+    p.classList.add("alert", "alert-success", "text-center", "w-75", "mx-auto");
 
     outcome.appendChild(p);
 
@@ -89,13 +89,20 @@ function playRound(playerSelection, computerSelection) {
 rock.addEventListener(
   "click",
   () => {
-    removeOutcome()
+    removeOutcome();
     currentScore(playerWinCount, computerWinCount);
     removeScore(playerWinCount, computerWinCount);
     const playerSelection = "rock";
     const p = document.createElement("p");
     p.innerText = "You Choose ROCK ✊";
-    p.classList.add("alert", "alert-info", "mt-5","text-start","w-75","mx-auto");
+    p.classList.add(
+      "alert",
+      "alert-info",
+      "mt-5",
+      "text-start",
+      "w-75",
+      "mx-auto"
+    );
 
     outcome.appendChild(p);
 
@@ -111,14 +118,13 @@ rock.addEventListener(
 paper.addEventListener(
   "click",
   () => {
-
-    removeOutcome()
+    removeOutcome();
     currentScore(playerWinCount, computerWinCount);
     removeScore(playerWinCount, computerWinCount);
     const playerSelection = "paper";
     const p = document.createElement("p");
     p.innerText = "Player choose PAPER 🤚";
-    p.classList.add("alert", "alert-info", "mt-5","w-75","mx-auto");
+    p.classList.add("alert", "alert-info", "mt-5", "w-75", "mx-auto");
 
     outcome.appendChild(p);
     const computerSelection = getComputerChoice();
@@ -134,7 +140,8 @@ paper.addEventListener(
 
 scissors.addEventListener(
   "click",
-  () => {    removeOutcome()
+  () => {
+    removeOutcome();
 
     currentScore(playerWinCount, computerWinCount);
     removeScore(playerWinCount, computerWinCount);
@@ -142,7 +149,7 @@ scissors.addEventListener(
 
     const p = document.createElement("p");
     p.innerText = "You choose SCISSORS✌️";
-    p.classList.add("alert", "alert-info", "mt-5","w-75","mx-auto");
+    p.classList.add("alert", "alert-info", "mt-5", "w-75", "mx-auto");
     outcome.appendChild(p);
 
     const computerSelection = getComputerChoice();
@@ -157,9 +164,6 @@ scissors.addEventListener(
 
 // currentScore(playerWinCount,computerWinCount)
 
-
-
-
 let removeOutcome = () => {
   // Get the list of child nodes
   const children = outcome.children;
@@ -171,12 +175,6 @@ let removeOutcome = () => {
   }
 };
 
-
-
-
-
-
-
 let addMargin = () => {
   const p = document.createElement("p");
   p.classList.add("h-100", "p-6");
@@ -187,15 +185,20 @@ const checkForWinner = (playerScore, computerScore) => {
   if (playerScore === 5) {
     const h2 = document.createElement("h2");
     h2.innerText = `You won ${playerScore} to ${computerScore}  Great Job winning the computer`;
-    h2.classList.add("alert", "alert-success","text-center");
+    h2.classList.add("alert", "alert-success", "text-center","w-75");
     EndingScore.appendChild(h2);
+    restartGame();
+    removeEndResultIfMultiple()
   }
   if (computerScore === 5) {
     const h2 = document.createElement("h2");
-    h2.classList.add("alert", "alert-danger","text-center");
+    h2.classList.add("alert", "alert-danger", "text-center","w-75");
 
     h2.innerText = `You lost by  ${playerScore} to ${computerScore}`;
+
     EndingScore.appendChild(h2);
+    restartGame();
+    removeEndResultIfMultiple()
   }
 };
 
@@ -206,20 +209,19 @@ let currentScore = (playerWinCount, computerWinCount) => {
   p.classList.add(
     "d-flex",
     "justify-content-center",
-    "p-3",
+    "p-4",
     "bg-dark",
     "text-white",
     "w-25",
     "mx-auto",
-    "rounded-circle"
+    "rounded",
+    "current-items"
   );
 
   currentScoreIs.appendChild(p);
 };
 
 currentScore(playerWinCount, computerWinCount);
-
-
 
 let removeScore = (playerWinCount, computerWinCount) => {
   // const list = document.getElementById("myList");
@@ -245,9 +247,9 @@ let getComputerChoice = () => {
   compuChoice = compuChoice.toLowerCase();
 
   const p = document.createElement("p");
-  emoji=EmojiComputer(compuChoice)
+  emoji = EmojiComputer(compuChoice);
   p.innerText = `Computer Chooses ${compuChoice} ${emoji}`;
-  p.classList.add("alert", "alert-danger","text-end","w-75","mx-auto");
+  p.classList.add("alert", "alert-danger", "text-end", "w-75", "mx-auto");
   outcome.appendChild(p);
 
   return compuChoice;
@@ -259,43 +261,27 @@ let EmojiComputer = (computChoice) => {
     : compuChoice == "paper"
     ? "🤚"
     : compuChoice == "scissors"
-    ?  "✌️"
+    ? "✌️"
     : null;
 };
 
-//function for more than one round game and score Card
-// let game = () => {
-//   console.log("lets play Five Rounds".toUpperCase());
-//   // for (i = 1; i <= 5; i++) {
-//   //   console.log(`Round ${i}`);
+let restartGame = () => {
+  playerWinCount = 0;
+  computerWinCount = 0;
+  removeOutcome();
+  // currentScore(playerWinCount,computerWinCount)
+};
 
-//   //   let playerSelection = askPlayerSelection();
+//remove the first child if the ending score is multiple
+let removeEndResultIfMultiple = () => {
 
-//   //   let computerSelection = getComputerChoice();
+const childrens=EndingScore.children
+while(childrens.length>1)
+{
+  EndingScore.removeChild(EndingScore.firstChild)
 
-//   //   score.lastChild.textContent = playRound(playerSelection, computerSelection);
+}
 
-//   //   // console.log(playRound(playerSelection, computerSelection));
-//   //   displayResult.lastChild.textContent = `Win Count: Player-${playerWinCount} Computer-${computerWinCountf}`;
-//   // }
-//   //for ui checking who won
-//   playerWinCount > computerWinCount
-//     ? (finalScore.firstChild.textContent = "Congrats You win".toUpperCase())
-//     : playerWinCount < computerWinCount
-//     ? (finalScore.firstChild.textContent = "You lose Dummy".toUpperCase())
-//     : (finalScore.firstChild.textContent = "Well its a Tie, Go Home");
-// };
-// game();
 
-// function askPlayerSelection(playerSelection) {
-//   // let ourSelection = prompt('Enter your choice "Rock :Paper :scissors', "rock");
+};
 
-//   let isSelected = playerSelection;
-
-//   // ourSelection = ourSelection.toLowerCase();
-//   buttonContain.nextSibling.innerText = `Player Selected ${isSelected}`;
-
-//   console.log(`Player Selected ${isSelected}`);
-
-//   return isSelected;
-// }
