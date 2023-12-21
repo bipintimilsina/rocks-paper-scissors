@@ -1,2 +1,2 @@
 # rocks-paper-scissors
-Play here rocks and papers dumbass.
+Play here rocks and paper
