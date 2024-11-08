@@ -17,7 +17,7 @@ function playRound(playerSelection, computerSelection) {
     const p = document.createElement("p");
 
     p.innerText = "YOU TIED";
-    p.classList.add("alert", "alert-success", "text-center", "w-75", "mx-auto");
+    p.classList.add("alert", "alert-success", "text-center", "w-50", "mx-auto");
     outcome.appendChild(p);
 
     // return "::::Tie:::";
@@ -27,7 +27,7 @@ function playRound(playerSelection, computerSelection) {
     const p = document.createElement("p");
 
     p.innerText = "You Win scissors✌️ Cuts Paper🤚";
-    p.classList.add("alert", "alert-success", "text-center", "w-75", "mx-auto");
+    p.classList.add("alert", "alert-success", "text-center", "w-50", "mx-auto");
 
     outcome.appendChild(p);
 
@@ -36,7 +36,7 @@ function playRound(playerSelection, computerSelection) {
     computerWinCount++;
     const p = document.createElement("p");
     p.innerText = "You Lose Scissors✌️ cuts paper🤚";
-    p.classList.add("alert", "alert-success", "text-center", "w-75", "mx-auto");
+    p.classList.add("alert", "alert-success", "text-center", "w-50", "mx-auto");
 
     outcome.appendChild(p);
 
@@ -45,7 +45,7 @@ function playRound(playerSelection, computerSelection) {
     playerWinCount++;
     const p = document.createElement("p");
     p.innerText = "You Win Rock✊ beats scissors✌️";
-    p.classList.add("alert", "alert-success", "text-center", "w-75", "mx-auto");
+    p.classList.add("alert", "alert-success", "text-center", "w-50", "mx-auto");
 
     outcome.appendChild(p);
 
@@ -54,7 +54,7 @@ function playRound(playerSelection, computerSelection) {
     computerWinCount++;
     const p = document.createElement("p");
     p.innerText = "You Lose Rock✌️ beats Scissors✌️";
-    p.classList.add("alert", "alert-success", "text-center", "w-75", "mx-auto");
+    p.classList.add("alert", "alert-success", "text-center", "w-50", "mx-auto");
 
     outcome.appendChild(p);
 
@@ -65,7 +65,7 @@ function playRound(playerSelection, computerSelection) {
     const p = document.createElement("p");
     p.innerText = "You win Paper🤚 beats Rock✌️";
 
-    p.classList.add("alert", "alert-success", "text-center", "w-75", "mx-auto");
+    p.classList.add("alert", "alert-success", "text-center", "w-50", "mx-auto");
 
     outcome.appendChild(p);
 
@@ -75,7 +75,7 @@ function playRound(playerSelection, computerSelection) {
 
     const p = document.createElement("p");
     p.innerText = "You lose Paper🤚 beats Rock✊";
-    p.classList.add("alert", "alert-success", "text-center", "w-75", "mx-auto");
+    p.classList.add("alert", "alert-success", "text-center", "w-50", "mx-auto");
 
     outcome.appendChild(p);
 
@@ -100,7 +100,7 @@ rock.addEventListener(
       "alert-info",
       "mt-5",
       "text-start",
-      "w-75",
+      "w-50",
       "mx-auto"
     );
 
@@ -124,7 +124,7 @@ paper.addEventListener(
     const playerSelection = "paper";
     const p = document.createElement("p");
     p.innerText = "Player choose PAPER 🤚";
-    p.classList.add("alert", "alert-info", "mt-5", "w-75", "mx-auto");
+    p.classList.add("alert", "alert-info", "mt-5", "w-50", "mx-auto");
 
     outcome.appendChild(p);
     const computerSelection = getComputerChoice();
@@ -149,7 +149,7 @@ scissors.addEventListener(
 
     const p = document.createElement("p");
     p.innerText = "You choose SCISSORS✌️";
-    p.classList.add("alert", "alert-info", "mt-5", "w-75", "mx-auto");
+    p.classList.add("alert", "alert-info", "mt-5", "w-50", "mx-auto");
     outcome.appendChild(p);
 
     const computerSelection = getComputerChoice();
@@ -185,14 +185,14 @@ const checkForWinner = (playerScore, computerScore) => {
   if (playerScore === 5) {
     const h2 = document.createElement("h2");
     h2.innerText = `You won ${playerScore} to ${computerScore}  Great Job winning the computer`;
-    h2.classList.add("alert", "alert-success", "text-center","w-75");
+    h2.classList.add("alert", "alert-success", "text-center","w-25");
     EndingScore.appendChild(h2);
     restartGame();
     removeEndResultIfMultiple()
   }
   if (computerScore === 5) {
     const h2 = document.createElement("h2");
-    h2.classList.add("alert", "alert-danger", "text-center","w-75");
+    h2.classList.add("alert", "alert-danger", "text-center","w-25");
 
     h2.innerText = `You lost by  ${playerScore} to ${computerScore}`;
 
@@ -249,7 +249,7 @@ let getComputerChoice = () => {
   const p = document.createElement("p");
   emoji = EmojiComputer(compuChoice);
   p.innerText = `Computer Chooses ${compuChoice} ${emoji}`;
-  p.classList.add("alert", "alert-danger", "text-end", "w-75", "mx-auto");
+  p.classList.add("alert", "alert-danger", "text-end", "w-50", "mx-auto");
   outcome.appendChild(p);
 
   return compuChoice;
